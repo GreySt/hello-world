@@ -5,16 +5,13 @@
 * 15:46:38
 */
 #include <iostream>
-
-using namespace std;
+#include "firstproject.h"
 
 int main()
 {
 
-//Todo Place code here
-cout << "Eclipse C++" << endl;
-
-return 0;
+	std::cout << "The sum of 3 and 4 is: " << add(3,4) << std::endl;
+	return 0;
 
 }
 
