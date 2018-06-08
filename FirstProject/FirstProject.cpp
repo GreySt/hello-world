@@ -7,11 +7,34 @@
 #include <iostream>
 #include "firstproject.h"
 
+int readNumber()
+{
+	int x;
+	std::cout << "Please enter your chosen Number: " << std::endl;
+	std::cin >> x;
+
+	return x;
+}
+
+void writeAnswer(int result)
+{
+	std::cout << "The result is: " << result << std::endl;
+
+}
+
 int main()
 {
+	int firstNumber = 0;
+	int secondNumber = 0;
+	int result = 0;
 
-	std::cout << "The sum of 3 and 4 is: " << add(3,4) << std::endl;
+	firstNumber= readNumber();
+	secondNumber = readNumber();
+
+	result = firstNumber + secondNumber;
+
+	writeAnswer(result);
+
 	return 0;
-
 }
 
