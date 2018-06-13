@@ -5,13 +5,44 @@
 * 15:46:38
 */
 #include <iostream>
-#include "firstproject.h"
+
+#include "io.h"
+
+
+bool isPrime(int x)
+{
+
+	if(x==1)
+		return true;
+
+	if(x==2)
+		return true;
+
+	if (x==3)
+		return true;
+
+	if (x==5)
+		return true;
+
+	if (x==7)
+		return true;
+	return false;
+}
 
 int main()
 {
+	int x{0};
+	std::cout << "Please enter a single digit Integer" << std::endl;
+	std::cin >> x;
 
-	std::cout << "The sum of 3 and 4 is: " << add(3,4) << std::endl;
+	bool prime = isPrime(x);
+
+	if (prime ==1)
+		std::cout << "The digit is prime" << std::endl;
+	else
+		std::cout << "The digit is not prime" << std::endl;
+
+
 	return 0;
-
 }
 
