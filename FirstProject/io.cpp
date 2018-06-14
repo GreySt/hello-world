@@ -5,9 +5,8 @@
  *      Author: trtec
  */
 
-#include "io.h"
-
 #include <iostream>
+#include "constants.h"
 
 int readNumber()
 {
