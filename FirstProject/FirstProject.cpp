@@ -6,43 +6,33 @@
 */
 #include <iostream>
 
-#include "io.h"
+#include "constants.h"
 
-
-bool isPrime(int x)
+double getHeight()
 {
-
-	if(x==1)
-		return true;
-
-	if(x==2)
-		return true;
-
-	if (x==3)
-		return true;
-
-	if (x==5)
-		return true;
-
-	if (x==7)
-		return true;
-	return false;
+	std::cout << "Please insert the initial Height of your Tower: " << '\n';
+	double height;
+	std::cin >> height;
+	return height;
 }
 
+
+double calculateHeight(int t)
+{
+	double calculateHeight= myConstants::gravity * t * t / 2 ;
+
+	return calculateHeight;
+}
 int main()
 {
-	int x{0};
-	std::cout << "Please enter a single digit Integer" << std::endl;
-	std::cin >> x;
+    double height = getHeight();
 
-	bool prime = isPrime(x);
+    std::cout << height - calculateHeight(1) << '\n';
+    std::cout << height - calculateHeight(2) << '\n';
+    std::cout << height - calculateHeight(3) << '\n';
+    std::cout << height - calculateHeight(4) << '\n';
+    std::cout << height - calculateHeight(5) << '\n';
 
-	if (prime ==1)
-		std::cout << "The digit is prime" << std::endl;
-	else
-		std::cout << "The digit is not prime" << std::endl;
-
-
-	return 0;
+    return 0;
 }
 
