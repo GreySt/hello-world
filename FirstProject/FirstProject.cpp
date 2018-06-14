@@ -5,47 +5,44 @@
 * 15:46:38
 */
 #include <iostream>
-#include "firstproject.h"
 
-int readNumber()
+#include "io.h"
+
+
+bool isPrime(int x)
 {
-	int x;
-	std::cout << "Please enter your chosen Number: " << std::endl;
-	std::cin >> x;
 
-	return x;
-}
+	if(x==1)
+		return true;
 
-void writeAnswer(int result)
-{
-	std::cout << "The result is: " << result << std::endl;
+	if(x==2)
+		return true;
 
+	if (x==3)
+		return true;
+
+	if (x==5)
+		return true;
+
+	if (x==7)
+		return true;
+	return false;
 }
 
 int main()
 {
-	int firstNumber = 0;
-	int secondNumber = 0;
-	int result = 0;
+	int x{0};
+	std::cout << "Please enter a single digit Integer" << std::endl;
+	std::cin >> x;
 
-	firstNumber= readNumber();
-	secondNumber = readNumber();
+	bool prime = isPrime(x);
 
-	result = firstNumber + secondNumber;
+	if (prime ==1)
+		std::cout << "The digit is prime" << std::endl;
+	else
+		std::cout << "The digit is not prime" << std::endl;
 
-	writeAnswer(result);
-	  std::cout << "bool:\t\t" << sizeof(bool) << " bytes" << std::endl;
-	    std::cout << "char:\t\t" << sizeof(char) << " bytes" << std::endl;
-	    std::cout << "wchar_t:\t" << sizeof(wchar_t) << " bytes" << std::endl;
-	    std::cout << "char16_t:\t" << sizeof(char16_t) << " bytes" << std::endl; // C++11, may not be supported by your compiler
-	    std::cout << "char32_t:\t" << sizeof(char32_t) << " bytes" << std::endl; // C++11, may not be supported by your compiler
-	    std::cout << "short:\t\t" << sizeof(short) << " bytes" << std::endl;
-	    std::cout << "int:\t\t" << sizeof(int) << " bytes" << std::endl;
-	    std::cout << "long:\t\t" << sizeof(long) << " bytes" << std::endl;
-	    std::cout << "long long:\t" << sizeof(long long) << " bytes" << std::endl; // C++11, may not be supported by your compiler
-	    std::cout << "float:\t\t" << sizeof(float) << " bytes" << std::endl;
-	    std::cout << "double:\t\t" << sizeof(double) << " bytes" << std::endl;
-	    std::cout << "long double:\t" << sizeof(long double) << " bytes" << std::endl;
+
 	return 0;
 }
 
