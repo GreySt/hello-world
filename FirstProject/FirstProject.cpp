@@ -8,7 +8,7 @@
 
 #include "constants.h"
 
-double getHeight()
+double getTowerheight()
 {
 	std::cout << "Please insert the initial Height of your Tower: " << '\n';
 	double height;
@@ -17,21 +17,40 @@ double getHeight()
 }
 
 
-double calculateHeight(int t)
+void printHeight(double ballHeight)
 {
-	double calculateHeight= myConstants::gravity * t * t / 2 ;
+	if (ballHeight > 0.0)
+		std::cout << "the ball is at a Height of: " << ballHeight << "m" << '\n';
+	else
+		std::cout << "the ball hit the ground" << '\n';
 
-	return calculateHeight;
 }
+
+
+double calculateHeight(int t , double towerHeight )
+{
+	double calculateHeight = (myConstants::gravity * (t * t)) / 2 ;
+	double height = towerHeight - calculateHeight;
+	return height;
+
+}
+
+void calculateandprintHeight(int t, double towerHeight)
+{
+
+	double height = calculateHeight(t , towerHeight);
+	printHeight (height);
+
+}
+
 int main()
 {
-    double height = getHeight();
-
-    std::cout << height - calculateHeight(1) << '\n';
-    std::cout << height - calculateHeight(2) << '\n';
-    std::cout << height - calculateHeight(3) << '\n';
-    std::cout << height - calculateHeight(4) << '\n';
-    std::cout << height - calculateHeight(5) << '\n';
+    double towerHeight = getTowerheight();
+    calculateandprintHeight (1 , towerHeight);
+    calculateandprintHeight (2 , towerHeight);
+    calculateandprintHeight (3 , towerHeight);
+    calculateandprintHeight (4 , towerHeight);
+    calculateandprintHeight (5 , towerHeight);
 
     return 0;
 }
