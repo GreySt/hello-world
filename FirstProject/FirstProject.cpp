@@ -10,7 +10,7 @@
 
 double getHeight()
 {
-	std::cout << "Please insert the initial Height of your Tower:dasfaf " << '\n';
+	std::cout << "Please insert the initial Height of your Tower: " << '\n';
 	double height;
 	std::cin >> height;
 	return height;
